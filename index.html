@@ -3,57 +3,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Зроби це зараз | Інтерактивна карта знань</title>
+    <title>Зроби це зараз | Knowledge Map</title>
     <meta
       name="description"
-      content="Преміальна інтерактивна карта знань за книгою Браяна Трейсі «Зроби це зараз»."
+      content="Швидка сучасна інтерактивна карта знань за книгою Браяна Трейсі «Зроби це зараз»."
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main class="app" aria-label="Інтерактивна карта знань книги Зроби це зараз">
       <canvas class="particles" id="particles" aria-hidden="true"></canvas>
-      <div class="ambient ambient-a" aria-hidden="true"></div>
-      <div class="ambient ambient-b" aria-hidden="true"></div>
-      <div class="vignette" aria-hidden="true"></div>
 
-      <header class="top-panel">
+      <header class="hero">
         <p class="eyebrow">Браян Трейсі</p>
         <h1>Зроби це зараз</h1>
-        <p class="tagline">21 спосіб перемогти прокрастинацію і працювати з фокусом</p>
+        <p class="tagline">21 практична ідея для фокусу, дії та продуктивності</p>
       </header>
 
       <section class="map-stage" aria-label="Карта розділів">
         <svg class="connection-svg" id="connectionSvg" viewBox="0 0 1000 1000" aria-hidden="true"></svg>
 
         <button class="book-core" id="bookButton" type="button" aria-label="Відкрити інформацію про книгу">
-          <span class="book-halo" aria-hidden="true"></span>
           <img src="images/book-cover.png" alt="Обкладинка книги «Зроби це зараз»" />
         </button>
 
-        <div class="nodes-layer" id="nodesLayer"></div>
+        <div class="nodes-layer" id="nodesLayer" aria-label="Розділи книги"></div>
       </section>
 
-      <section class="main-audio" aria-label="Повна аудіокнига">
-        <button class="listen-button" id="mainPlayButton" type="button">
-          <span aria-hidden="true">▶</span>
-          Listen to Full Audiobook
-        </button>
-
-        <div class="audio-panel" id="mainAudioPanel" hidden>
-          <div class="eq" id="mainEq" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i>
-          </div>
-          <div class="audio-meta">
-            <span id="mainCurrent">0:00</span>
-            <input id="mainProgress" type="range" min="0" max="100" value="0" aria-label="Прогрес повної аудіокниги" />
-            <span id="mainDuration">0:00</span>
-          </div>
-        </div>
-      </section>
+      <nav class="knowledge-cta" aria-label="Повна карта знань">
+        <!-- Replace link with your final mind map page -->
+        <a class="map-link" href="knowledge-map.html">Open Full Knowledge Map</a>
+      </nav>
 
       <section class="chapter-modal" id="chapterModal" role="dialog" aria-modal="true" aria-labelledby="chapterTitle" hidden>
-        <div class="modal-scrim" data-close-chapter></div>
+        <button class="modal-scrim" type="button" aria-label="Закрити розділ" data-close-chapter></button>
         <article class="chapter-dialog">
           <button class="close-button" type="button" aria-label="Закрити розділ" data-close-chapter>×</button>
           <div class="chapter-topline">
@@ -62,20 +45,20 @@
           </div>
           <h2 id="chapterTitle">Назва розділу</h2>
 
-          <div class="chapter-section">
-            <h3>КОРОТКИЙ ЗМІСТ</h3>
+          <section class="chapter-section" aria-labelledby="summaryHeading">
+            <h3 id="summaryHeading">КОРОТКИЙ ЗМІСТ</h3>
             <p id="chapterSummary"></p>
-          </div>
+          </section>
 
-          <div class="chapter-section">
-            <h3>ГОЛОВНА ІДЕЯ</h3>
+          <section class="chapter-section" aria-labelledby="ideaHeading">
+            <h3 id="ideaHeading">ГОЛОВНА ІДЕЯ</h3>
             <p id="chapterIdea"></p>
-          </div>
+          </section>
 
-          <div class="chapter-section quote-section">
-            <h3>ЦИТАТА</h3>
+          <section class="chapter-section quote-section" aria-labelledby="quoteHeading">
+            <h3 id="quoteHeading">ЦИТАТА</h3>
             <blockquote id="chapterQuote"></blockquote>
-          </div>
+          </section>
 
           <div class="chapter-player">
             <button class="chapter-play" id="chapterPlayButton" type="button" aria-label="Увімкнути аудіо розділу">
@@ -88,15 +71,12 @@
               </div>
               <input id="chapterProgress" type="range" min="0" max="100" value="0" aria-label="Прогрес аудіо розділу" />
             </div>
-            <div class="mini-eq" id="chapterEq" aria-hidden="true">
-              <i></i><i></i><i></i><i></i>
-            </div>
           </div>
         </article>
       </section>
 
       <section class="book-modal" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle" hidden>
-        <div class="modal-scrim" data-close-book></div>
+        <button class="modal-scrim" type="button" aria-label="Закрити інформацію про книгу" data-close-book></button>
         <article class="book-dialog">
           <button class="close-button" type="button" aria-label="Закрити інформацію про книгу" data-close-book>×</button>
           <div class="book-page">
@@ -104,25 +84,23 @@
             <h2 id="bookModalTitle">Зроби це зараз</h2>
             <p class="book-author">Браян Трейсі</p>
             <p>
-              Практичний посібник про те, як обирати найважливіші задачі, починати без зволікань
-              і створювати щоденну систему продуктивності.
+              Практичний посібник про те, як визначати найважливіші задачі, починати без зволікань
+              і будувати щоденну систему продуктивності.
             </p>
           </div>
           <div class="book-page">
             <p class="page-label">Інсайти</p>
             <p>
-              Центральна ідея книги: спочатку потрібно виконувати найважчу й найціннішу справу,
-              бо саме вона найсильніше рухає людину до результату.
+              Центральна думка книги: спочатку виконуйте найважчу й найціннішу справу,
+              бо саме вона найбільше впливає на результат.
             </p>
             <p>
-              Цей сайт оформлений як карта знань: кожен вузол відкриває окрему думку, цитату
-              та аудіо відповідного розділу.
+              Контент розділів редагується в масиві <code>chapters</code> у файлі <code>js/script.js</code>.
             </p>
           </div>
         </article>
       </section>
 
-      <audio id="mainAudio" preload="metadata" src="audio/audiobook.mp3"></audio>
       <audio id="chapterAudio" preload="metadata"></audio>
     </main>
 

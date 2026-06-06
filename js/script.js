@@ -1,228 +1,68 @@
 const chapters = [
-  {
-    number: 1,
-    participantName: "Ім'я учасника 1",
-    title: "Найважливіша справа дня",
-    summary: "Розділ пояснює, чому варто починати день із задачі, яка має найбільшу цінність, навіть якщо вона здається складною.",
-    keyIdea: "Якщо зробити головну справу першою, решта дня стає легшою і продуктивнішою.",
-    quote: "Почніть із найважчого, і ви отримаєте перевагу над власним зволіканням."
-  },
-  {
-    number: 2,
-    participantName: "Ім'я учасника 2",
-    title: "Чіткість перед дією",
-    summary: "Автор наголошує: перед роботою потрібно ясно визначити мету, результат і перший крок.",
-    keyIdea: "Нечітка мета створює хаос, а чітка мета скорочує шлях до дії.",
-    quote: "Ясність перетворює бажання на план."
-  },
-  {
-    number: 3,
-    participantName: "Ім'я учасника 3",
-    title: "Планування кожного дня",
-    summary: "Розділ показує силу простого списку справ і попереднього планування ввечері або зранку.",
-    keyIdea: "Кілька хвилин планування економлять години розгубленої роботи.",
-    quote: "Думайте на папері, перш ніж діяти в реальності."
-  },
-  {
-    number: 4,
-    participantName: "Ім'я учасника 4",
-    title: "Правило 80/20",
-    summary: "Невелика кількість задач приносить більшість результату, тому важливо знайти саме ці задачі.",
-    keyIdea: "Фокусуйтеся на 20 відсотках дій, які створюють 80 відсотків прогресу.",
-    quote: "Не всі справи рівні за своєю цінністю."
-  },
-  {
-    number: 5,
-    participantName: "Ім'я учасника 5",
-    title: "Наслідки вибору",
-    summary: "Розділ навчає оцінювати справи за довгостроковими наслідками, а не за миттєвою зручністю.",
-    keyIdea: "Найважливіші задачі мають найбільші наслідки для майбутнього.",
-    quote: "Майбутнє формується тими справами, які ви обираєте сьогодні."
-  },
-  {
-    number: 6,
-    participantName: "Ім'я учасника 6",
-    title: "Творче відкладання",
-    summary: "Не все варто робити. Частину справ потрібно свідомо відкласти або прибрати, щоб звільнити місце для головного.",
-    keyIdea: "Відмовляйтеся від дрібного, щоб мати енергію для важливого.",
-    quote: "Щоб зробити більше цінного, треба робити менше зайвого."
-  },
-  {
-    number: 7,
-    participantName: "Ім'я учасника 7",
-    title: "Метод ABCDE",
-    summary: "Кожна справа отримує пріоритет: від критично важливої до тієї, яку можна не виконувати.",
-    keyIdea: "Пріоритети захищають вас від випадкової зайнятості.",
-    quote: "Працюйте над A-справами, поки інші губляться в C-справах."
-  },
-  {
-    number: 8,
-    participantName: "Ім'я учасника 8",
-    title: "Ключові зони результату",
-    summary: "Автор радить визначити сфери, від яких залежить успіх у навчанні, роботі чи проєкті.",
-    keyIdea: "Слабка ключова зона обмежує весь результат.",
-    quote: "Зміцнюйте те, що найбільше впливає на вашу ефективність."
-  },
-  {
-    number: 9,
-    participantName: "Ім'я учасника 9",
-    title: "Підготовка до роботи",
-    summary: "Чисте робоче місце, потрібні матеріали й готовність зменшують опір перед початком.",
-    keyIdea: "Підготовлене середовище робить старт майже автоматичним.",
-    quote: "Коли все готово, почати значно легше."
-  },
-  {
-    number: 10,
-    participantName: "Ім'я учасника 10",
-    title: "Крок за кроком",
-    summary: "Велика справа стає керованою, якщо розділити її на малі конкретні дії.",
-    keyIdea: "Не потрібно бачити всю дорогу, достатньо зробити наступний крок.",
-    quote: "Величезні результати складаються з малих завершених кроків."
-  },
-  {
-    number: 11,
-    participantName: "Ім'я учасника 11",
-    title: "Розвиток навичок",
-    summary: "Постійне навчання підвищує швидкість і якість роботи, тому інвестиція в навички повертається багаторазово.",
-    keyIdea: "Чим краще ви вмієте робити головну справу, тим менше опору відчуваєте.",
-    quote: "Майстерність зменшує страх перед складністю."
-  },
-  {
-    number: 12,
-    participantName: "Ім'я учасника 12",
-    title: "Використання сильних сторін",
-    summary: "Розділ пропонує знаходити задачі, де ваші здібності дають найбільший ефект.",
-    keyIdea: "Найкращі результати з'являються там, де сильні сторони зустрічаються з важливою метою.",
-    quote: "Працюйте там, де ваша сила має найбільшу ціну."
-  },
-  {
-    number: 13,
-    participantName: "Ім'я учасника 13",
-    title: "Головне обмеження",
-    summary: "У кожному процесі є фактор, який найбільше стримує рух. Його треба знайти й усунути.",
-    keyIdea: "Один правильний прорив може прискорити весь проєкт.",
-    quote: "Знайдіть вузьке місце, і ви знайдете точку росту."
-  },
-  {
-    number: 14,
-    participantName: "Ім'я учасника 14",
-    title: "Особиста відповідальність",
-    summary: "Автор підкреслює: продуктивність починається з рішення не чекати і не перекладати провину.",
-    keyIdea: "Коли ви берете відповідальність, ви повертаєте собі контроль.",
-    quote: "Ваш прогрес починається там, де закінчуються виправдання."
-  },
-  {
-    number: 15,
-    participantName: "Ім'я учасника 15",
-    title: "Енергія і ритм",
-    summary: "Розділ говорить про сон, відпочинок і правильний темп як основу стабільної продуктивності.",
-    keyIdea: "Висока ефективність потребує не лише часу, а й енергії.",
-    quote: "Піклування про себе є частиною роботи над результатом."
-  },
-  {
-    number: 16,
-    participantName: "Ім'я учасника 16",
-    title: "Позитивний внутрішній діалог",
-    summary: "Те, як людина говорить із собою, впливає на сміливість починати і продовжувати.",
-    keyIdea: "Сильні слова підтримують сильні дії.",
-    quote: "Переконайте себе, що можете, і початок стане ближчим."
-  },
-  {
-    number: 17,
-    participantName: "Ім'я учасника 17",
-    title: "Технології без відволікань",
-    summary: "Гаджети мають допомагати роботі, а не красти увагу через сповіщення й випадковий контент.",
-    keyIdea: "Контроль над технологіями повертає контроль над часом.",
-    quote: "Інструмент має служити меті, а не керувати увагою."
-  },
-  {
-    number: 18,
-    participantName: "Ім'я учасника 18",
-    title: "Один фокус",
-    summary: "Однозадачність дозволяє швидше завершувати справи і робити їх якісніше.",
-    keyIdea: "Глибока концентрація сильніша за постійне перемикання.",
-    quote: "Завершена справа цінніша за десять початих."
-  },
-  {
-    number: 19,
-    participantName: "Ім'я учасника 19",
-    title: "Відчуття терміновості",
-    summary: "Швидкий темп і готовність діяти створюють імпульс, який допомагає проходити складні етапи.",
-    keyIdea: "Дійте зараз, поки енергія рішення ще жива.",
-    quote: "Швидкість дії часто відрізняє мрію від результату."
-  },
-  {
-    number: 20,
-    participantName: "Ім'я учасника 20",
-    title: "Стан потоку",
-    summary: "Коли увага зібрана, робота стає глибшою, швидшою і навіть приємнішою.",
-    keyIdea: "Потік з'являється після старту, а не до нього.",
-    quote: "Почніть працювати, і натхнення наздожене вас у процесі."
-  },
-  {
-    number: 21,
-    participantName: "Ім'я учасника 21",
-    title: "Звичка завершувати",
-    summary: "Фінальний розділ підсумовує: дисципліна починати з головного поступово стає характером.",
-    keyIdea: "Регулярне завершення важливих справ створює впевненість і результат.",
-    quote: "Кожна завершена головна справа робить вас сильнішими."
-  }
+  // Future content goes here: edit participantName, title, summary, keyIdea, and quote.
+  { number: 1, participantName: "Ім'я учасника 1", title: "Найважливіша справа дня", summary: "Розділ пояснює, чому день варто починати із задачі, яка має найбільшу цінність, навіть якщо вона найскладніша.", keyIdea: "Головна справа, виконана першою, створює імпульс для всього дня.", quote: "Почніть із найважчого, і ви переможете зволікання." },
+  { number: 2, participantName: "Ім'я учасника 2", title: "Чіткість перед дією", summary: "Перед роботою потрібно точно визначити мету, очікуваний результат і перший конкретний крок.", keyIdea: "Ясна мета зменшує хаос і робить старт простішим.", quote: "Ясність перетворює бажання на план." },
+  { number: 3, participantName: "Ім'я учасника 3", title: "Планування кожного дня", summary: "Короткий список справ допомагає бачити пріоритети та не витрачати енергію на випадкову зайнятість.", keyIdea: "Кілька хвилин планування економлять години роботи.", quote: "Думайте на папері, перш ніж діяти." },
+  { number: 4, participantName: "Ім'я учасника 4", title: "Правило 80/20", summary: "Невелика частина задач приносить більшість результату, тому важливо знаходити саме ці задачі.", keyIdea: "Фокусуйтеся на діях із найбільшою віддачею.", quote: "Не всі справи рівні за своєю цінністю." },
+  { number: 5, participantName: "Ім'я учасника 5", title: "Наслідки вибору", summary: "Важливість задачі визначається її довгостроковими наслідками, а не тим, наскільки легко її виконати зараз.", keyIdea: "Обирайте справи, які змінюють майбутній результат.", quote: "Майбутнє формується вибором сьогодні." },
+  { number: 6, participantName: "Ім'я учасника 6", title: "Творче відкладання", summary: "Не все потрібно робити. Частину дрібних справ треба свідомо прибирати, щоб звільнити місце для головного.", keyIdea: "Менше зайвого означає більше енергії для важливого.", quote: "Щоб зробити більше цінного, робіть менше другорядного." },
+  { number: 7, participantName: "Ім'я учасника 7", title: "Метод ABCDE", summary: "Кожна справа отримує пріоритет від критичної до такої, яку можна не виконувати.", keyIdea: "Система пріоритетів захищає від випадкової роботи.", quote: "Працюйте над A-справами першими." },
+  { number: 8, participantName: "Ім'я учасника 8", title: "Ключові зони результату", summary: "Успіх залежить від кількох ключових сфер, які потрібно визначити й постійно покращувати.", keyIdea: "Слабка ключова зона стримує весь результат.", quote: "Зміцнюйте те, що найбільше впливає на ефективність." },
+  { number: 9, participantName: "Ім'я учасника 9", title: "Підготовка до роботи", summary: "Підготовлене робоче місце, матеріали й чіткий старт зменшують психологічний опір.", keyIdea: "Коли все готово, почати значно легше.", quote: "Підготовка робить дію природною." },
+  { number: 10, participantName: "Ім'я учасника 10", title: "Крок за кроком", summary: "Велику справу легше виконати, якщо розбити її на невеликі послідовні дії.", keyIdea: "Наступний крок важливіший за ідеальний план.", quote: "Великі результати складаються з малих завершених кроків." },
+  { number: 11, participantName: "Ім'я учасника 11", title: "Розвиток навичок", summary: "Навчання підвищує швидкість, якість і впевненість у виконанні важливих задач.", keyIdea: "Майстерність зменшує опір перед складною роботою.", quote: "Інвестуйте в навички, і робота стане легшою." },
+  { number: 12, participantName: "Ім'я учасника 12", title: "Сильні сторони", summary: "Найкращі результати з'являються там, де ваші здібності поєднуються з важливою метою.", keyIdea: "Працюйте там, де ваша сила має найбільшу ціну.", quote: "Сильні сторони пришвидшують шлях до результату." },
+  { number: 13, participantName: "Ім'я учасника 13", title: "Головне обмеження", summary: "У кожному процесі є вузьке місце, яке найбільше сповільнює прогрес.", keyIdea: "Знайдіть і усуньте головне обмеження.", quote: "Вузьке місце часто є точкою росту." },
+  { number: 14, participantName: "Ім'я учасника 14", title: "Особиста відповідальність", summary: "Продуктивність починається з рішення діяти самостійно й не перекладати відповідальність.", keyIdea: "Відповідальність повертає контроль.", quote: "Прогрес починається там, де закінчуються виправдання." },
+  { number: 15, participantName: "Ім'я учасника 15", title: "Енергія і ритм", summary: "Сон, відпочинок і правильний темп потрібні для стабільної роботи без вигорання.", keyIdea: "Ефективність залежить не лише від часу, а й від енергії.", quote: "Піклування про себе підтримує результат." },
+  { number: 16, participantName: "Ім'я учасника 16", title: "Внутрішній діалог", summary: "Те, як людина говорить із собою, впливає на сміливість починати й продовжувати.", keyIdea: "Підтримувальні слова допомагають діяти.", quote: "Переконайте себе, що можете, і старт стане ближчим." },
+  { number: 17, participantName: "Ім'я учасника 17", title: "Технології без відволікань", summary: "Гаджети мають допомагати роботі, а не керувати увагою через сповіщення.", keyIdea: "Контроль над технологіями повертає контроль над часом.", quote: "Інструмент має служити меті." },
+  { number: 18, participantName: "Ім'я учасника 18", title: "Один фокус", summary: "Однозадачність допомагає швидше завершувати справи й робити їх якісніше.", keyIdea: "Глибока концентрація сильніша за перемикання.", quote: "Завершена справа цінніша за десять початих." },
+  { number: 19, participantName: "Ім'я учасника 19", title: "Відчуття терміновості", summary: "Швидкий темп і готовність діяти створюють імпульс для проходження складних етапів.", keyIdea: "Дійте зараз, поки рішення має енергію.", quote: "Швидкість дії відрізняє мрію від результату." },
+  { number: 20, participantName: "Ім'я учасника 20", title: "Стан потоку", summary: "Потік з'являється, коли увага зібрана і робота вже почалася.", keyIdea: "Натхнення часто приходить після старту.", quote: "Почніть працювати, і ритм з'явиться в процесі." },
+  { number: 21, participantName: "Ім'я учасника 21", title: "Звичка завершувати", summary: "Регулярне завершення важливих задач формує дисципліну, впевненість і реальний прогрес.", keyIdea: "Завершення головних справ поступово стає характером.", quote: "Кожна завершена справа робить вас сильнішими." }
 ];
 
-const pad = (value) => String(value).padStart(2, "0");
-
 const els = {
-  root: document.documentElement,
   canvas: document.getElementById("particles"),
   svg: document.getElementById("connectionSvg"),
   nodesLayer: document.getElementById("nodesLayer"),
   bookButton: document.getElementById("bookButton"),
   bookModal: document.getElementById("bookModal"),
   chapterModal: document.getElementById("chapterModal"),
-  mainAudio: document.getElementById("mainAudio"),
-  mainPlayButton: document.getElementById("mainPlayButton"),
-  mainAudioPanel: document.getElementById("mainAudioPanel"),
-  mainProgress: document.getElementById("mainProgress"),
-  mainCurrent: document.getElementById("mainCurrent"),
-  mainDuration: document.getElementById("mainDuration"),
-  mainEq: document.getElementById("mainEq"),
   chapterAudio: document.getElementById("chapterAudio"),
   chapterPlayButton: document.getElementById("chapterPlayButton"),
   chapterPlayIcon: document.getElementById("chapterPlayIcon"),
   chapterProgress: document.getElementById("chapterProgress"),
   chapterCurrent: document.getElementById("chapterCurrent"),
-  chapterDuration: document.getElementById("chapterDuration"),
-  chapterEq: document.getElementById("chapterEq")
+  chapterDuration: document.getElementById("chapterDuration")
 };
 
 const ctx = els.canvas.getContext("2d");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const pad = (value) => String(value).padStart(2, "0");
+let activeChapter = chapters[0];
 let particles = [];
 let particleFrame = 0;
-let activeChapter = chapters[0];
+let lastFocusedElement = null;
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return "0:00";
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${pad(secs)}`;
+  return `${Math.floor(seconds / 60)}:${pad(Math.floor(seconds % 60))}`;
 }
 
 function chapterAudioPath(number) {
   return `audio/chapter-${pad(number)}.mp3`;
 }
 
-function addSvgGradient() {
+function createSvgGradient() {
   const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
   const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
   gradient.id = "goldLine";
   gradient.setAttribute("x1", "0%");
   gradient.setAttribute("x2", "100%");
 
-  [
-    ["0%", "#8f681d"],
-    ["48%", "#ffd76a"],
-    ["100%", "#d4af37"]
-  ].forEach(([offset, color]) => {
+  [["0%", "#8b6a2d"], ["52%", "#f0ce75"], ["100%", "#d6b45a"]].forEach(([offset, color]) => {
     const stop = document.createElementNS("http://www.w3.org/2000/svg", "stop");
     stop.setAttribute("offset", offset);
     stop.setAttribute("stop-color", color);
@@ -233,9 +73,20 @@ function addSvgGradient() {
   els.svg.appendChild(defs);
 }
 
+// Adaptive layout: desktop uses one broad ring; smaller screens use two rings to avoid node collisions.
 function getNodePosition(index) {
+  const width = window.innerWidth;
   const angle = (index / chapters.length) * Math.PI * 2 - Math.PI / 2;
-  const radius = index % 2 === 0 ? 39 : 44;
+  let radius = index % 2 === 0 ? 39 : 44;
+
+  if (width <= 768) {
+    radius = index % 3 === 0 ? 32 : index % 3 === 1 ? 41 : 48;
+  }
+
+  if (width <= 430) {
+    radius = index % 3 === 0 ? 30 : index % 3 === 1 ? 40 : 49;
+  }
+
   return {
     x: 50 + Math.cos(angle) * radius,
     y: 50 + Math.sin(angle) * radius
@@ -243,10 +94,13 @@ function getNodePosition(index) {
 }
 
 function drawMindMap() {
-  addSvgGradient();
+  els.svg.replaceChildren();
+  els.nodesLayer.replaceChildren();
+  createSvgGradient();
 
   chapters.forEach((chapter, index) => {
     const position = getNodePosition(index);
+
     const node = document.createElement("button");
     node.type = "button";
     node.className = "chapter-node";
@@ -254,33 +108,43 @@ function drawMindMap() {
     node.style.top = `${position.y}%`;
     node.setAttribute("aria-label", `Відкрити розділ ${pad(chapter.number)}: ${chapter.title}`);
     node.innerHTML = `<strong>${pad(chapter.number)}</strong>`;
-    node.addEventListener("click", () => openChapter(chapter));
+    node.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openChapter(chapter);
+    });
     els.nodesLayer.appendChild(node);
 
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    const startX = 500;
-    const startY = 500;
     const endX = position.x * 10;
     const endY = position.y * 10;
-    const controlX = (startX + endX) / 2 + (index % 2 ? -34 : 34);
-    const controlY = (startY + endY) / 2 + (index % 3 ? 20 : -20);
-    path.setAttribute("d", `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`);
+    const controlX = (500 + endX) / 2 + (index % 2 === 0 ? 22 : -22);
+    const controlY = (500 + endY) / 2;
+    path.setAttribute("d", `M 500 500 Q ${controlX} ${controlY} ${endX} ${endY}`);
     els.svg.appendChild(path);
 
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
-    path.animate(
-      [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
-      { duration: 700, delay: 350 + index * 85, fill: "forwards", easing: "cubic-bezier(.22,1,.36,1)" }
-    );
 
-    window.setTimeout(() => node.classList.add("is-visible"), 470 + index * 85);
+    if (prefersReducedMotion) {
+      path.style.strokeDashoffset = "0";
+      node.classList.add("is-visible");
+    } else {
+      path.animate([{ strokeDashoffset: length }, { strokeDashoffset: 0 }], {
+        duration: 420,
+        delay: 120 + index * 32,
+        fill: "forwards",
+        easing: "ease-out"
+      });
+      window.setTimeout(() => node.classList.add("is-visible"), 180 + index * 32);
+    }
   });
 }
 
 function openChapter(chapter) {
   activeChapter = chapter;
+  lastFocusedElement = document.activeElement;
   document.getElementById("chapterNumber").textContent = `РОЗДІЛ ${pad(chapter.number)}`;
   document.getElementById("participantName").textContent = chapter.participantName;
   document.getElementById("chapterTitle").textContent = chapter.title;
@@ -294,8 +158,6 @@ function openChapter(chapter) {
   els.chapterCurrent.textContent = "0:00";
   els.chapterDuration.textContent = "0:00";
   els.chapterPlayIcon.textContent = "▶";
-  els.chapterEq.classList.remove("is-playing");
-
   els.chapterModal.hidden = false;
   els.chapterPlayButton.focus();
 }
@@ -303,85 +165,59 @@ function openChapter(chapter) {
 function closeChapter() {
   els.chapterModal.hidden = true;
   els.chapterAudio.pause();
-  els.chapterEq.classList.remove("is-playing");
   els.chapterPlayIcon.textContent = "▶";
+  if (lastFocusedElement) lastFocusedElement.focus();
 }
 
-function openBook() {
+function openBook(event) {
+  event.stopPropagation();
+  lastFocusedElement = document.activeElement;
   els.bookModal.hidden = false;
   els.bookModal.querySelector(".close-button").focus();
 }
 
 function closeBook() {
   els.bookModal.hidden = true;
-  els.bookButton.focus();
+  if (lastFocusedElement) lastFocusedElement.focus();
 }
 
-async function toggleAudio(audio) {
-  if (audio.paused) {
-    await audio.play();
-  } else {
-    audio.pause();
-  }
-}
-
-function bindAudio(audio, progress, current, duration, eq, onStateChange = () => {}) {
-  audio.addEventListener("loadedmetadata", () => {
-    duration.textContent = formatTime(audio.duration);
+function bindAudio() {
+  els.chapterAudio.addEventListener("loadedmetadata", () => {
+    els.chapterDuration.textContent = formatTime(els.chapterAudio.duration);
   });
 
-  audio.addEventListener("timeupdate", () => {
-    current.textContent = formatTime(audio.currentTime);
-    if (audio.duration) {
-      progress.value = String((audio.currentTime / audio.duration) * 100);
+  els.chapterAudio.addEventListener("timeupdate", () => {
+    els.chapterCurrent.textContent = formatTime(els.chapterAudio.currentTime);
+    if (els.chapterAudio.duration) {
+      els.chapterProgress.value = String((els.chapterAudio.currentTime / els.chapterAudio.duration) * 100);
     }
   });
 
-  audio.addEventListener("play", () => {
-    eq.classList.add("is-playing");
-    onStateChange(true);
+  els.chapterAudio.addEventListener("play", () => {
+    els.chapterPlayIcon.textContent = "Ⅱ";
   });
 
-  audio.addEventListener("pause", () => {
-    eq.classList.remove("is-playing");
-    onStateChange(false);
+  els.chapterAudio.addEventListener("pause", () => {
+    els.chapterPlayIcon.textContent = "▶";
   });
 
-  audio.addEventListener("ended", () => {
-    eq.classList.remove("is-playing");
-    onStateChange(false);
-  });
-
-  progress.addEventListener("input", () => {
-    if (audio.duration) {
-      audio.currentTime = (Number(progress.value) / 100) * audio.duration;
-    }
-  });
-}
-
-function setupAudio() {
-  bindAudio(els.mainAudio, els.mainProgress, els.mainCurrent, els.mainDuration, els.mainEq);
-  bindAudio(els.chapterAudio, els.chapterProgress, els.chapterCurrent, els.chapterDuration, els.chapterEq, (playing) => {
-    els.chapterPlayIcon.textContent = playing ? "Ⅱ" : "▶";
-  });
-
-  els.mainPlayButton.addEventListener("click", async () => {
-    els.mainAudioPanel.hidden = false;
-    try {
-      await toggleAudio(els.mainAudio);
-    } catch {
-      els.mainAudio.src = "audio/audio-book.mp3";
-      await toggleAudio(els.mainAudio);
+  els.chapterProgress.addEventListener("input", () => {
+    if (els.chapterAudio.duration) {
+      els.chapterAudio.currentTime = (Number(els.chapterProgress.value) / 100) * els.chapterAudio.duration;
     }
   });
 
   els.chapterPlayButton.addEventListener("click", async () => {
     try {
-      await toggleAudio(els.chapterAudio);
+      if (els.chapterAudio.paused) {
+        await els.chapterAudio.play();
+      } else {
+        els.chapterAudio.pause();
+      }
     } catch {
+      // Some browsers block playback until a direct user gesture or until audio files are present.
       if (activeChapter.number === 3) {
         els.chapterAudio.src = "audio/chapter-03 .mp3";
-        await toggleAudio(els.chapterAudio);
       }
     }
   });
@@ -390,12 +226,12 @@ function setupAudio() {
 function setupModals() {
   els.bookButton.addEventListener("click", openBook);
 
-  document.querySelectorAll("[data-close-book]").forEach((item) => {
-    item.addEventListener("click", closeBook);
+  document.querySelectorAll("[data-close-book]").forEach((button) => {
+    button.addEventListener("click", closeBook);
   });
 
-  document.querySelectorAll("[data-close-chapter]").forEach((item) => {
-    item.addEventListener("click", closeChapter);
+  document.querySelectorAll("[data-close-chapter]").forEach((button) => {
+    button.addEventListener("click", closeChapter);
   });
 
   document.addEventListener("keydown", (event) => {
@@ -403,15 +239,6 @@ function setupModals() {
       if (!els.chapterModal.hidden) closeChapter();
       if (!els.bookModal.hidden) closeBook();
     }
-  });
-}
-
-function setupParallax() {
-  window.addEventListener("pointermove", (event) => {
-    const x = (event.clientX / window.innerWidth - 0.5) * 2;
-    const y = (event.clientY / window.innerHeight - 0.5) * 2;
-    els.root.style.setProperty("--mx", x.toFixed(3));
-    els.root.style.setProperty("--my", y.toFixed(3));
   });
 }
 
@@ -423,33 +250,28 @@ function resizeParticles() {
   els.canvas.style.height = `${window.innerHeight}px`;
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-  const count = Math.min(120, Math.max(54, Math.floor(window.innerWidth / 12)));
+  // Performance improvement: particles are intentionally capped at 32, with no shadowBlur or glow.
+  const count = prefersReducedMotion ? 0 : Math.min(32, Math.max(20, Math.floor(window.innerWidth / 70)));
   particles = Array.from({ length: count }, () => ({
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
-    r: Math.random() * 2 + 0.5,
-    speed: Math.random() * 0.28 + 0.08,
-    drift: Math.random() * 0.28 - 0.14,
-    gold: Math.random() > 0.62
+    r: Math.random() * 1.6 + 0.6,
+    speed: Math.random() * 0.18 + 0.05
   }));
 }
 
 function animateParticles() {
   ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.fillStyle = "rgba(214, 180, 90, 0.24)";
 
   particles.forEach((particle) => {
     particle.y -= particle.speed;
-    particle.x += particle.drift;
-
-    if (particle.y < -8) {
-      particle.y = window.innerHeight + 8;
+    if (particle.y < -4) {
+      particle.y = window.innerHeight + 4;
       particle.x = Math.random() * window.innerWidth;
     }
 
     ctx.beginPath();
-    ctx.fillStyle = particle.gold ? "rgba(255, 215, 106, 0.72)" : "rgba(216, 180, 254, 0.26)";
-    ctx.shadowColor = particle.gold ? "rgba(255, 215, 106, 0.86)" : "rgba(168, 85, 247, 0.64)";
-    ctx.shadowBlur = particle.gold ? 12 : 8;
     ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
     ctx.fill();
   });
@@ -457,12 +279,21 @@ function animateParticles() {
   particleFrame = requestAnimationFrame(animateParticles);
 }
 
-window.addEventListener("resize", resizeParticles);
+// Redraw only on breakpoint-affecting resize, avoiding continuous layout work.
+let resizeTimer = 0;
+function handleResize() {
+  window.clearTimeout(resizeTimer);
+  resizeTimer = window.setTimeout(() => {
+    resizeParticles();
+    drawMindMap();
+  }, 120);
+}
+
+window.addEventListener("resize", handleResize);
 window.addEventListener("beforeunload", () => cancelAnimationFrame(particleFrame));
 
 drawMindMap();
-setupAudio();
+bindAudio();
 setupModals();
-setupParallax();
 resizeParticles();
-animateParticles();
+if (!prefersReducedMotion) animateParticles();
