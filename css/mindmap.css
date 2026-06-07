@@ -51,7 +51,7 @@ html {
   width: min(1440px, 100%);
   min-height: 100vh;
   margin: 0 auto;
-  padding: clamp(16px, 2.4vw, 32px);
+  padding: clamp(14px, 2vh, 24px) clamp(18px, 2.4vw, 32px);
 }
 
 .knowledge-header {
@@ -59,7 +59,7 @@ html {
   grid-template-columns: auto 1fr auto;
   gap: 18px;
   align-items: start;
-  margin-bottom: clamp(8px, 1.4vw, 18px);
+  margin-bottom: clamp(6px, 1.2vh, 14px);
 }
 
 .knowledge-back {
@@ -101,7 +101,7 @@ html {
 }
 
 .knowledge-title {
-  margin: 4px 0 6px;
+  margin: 2px 0 4px;
   color: var(--knowledge-gold);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 5.2vw, 4.35rem);
@@ -117,12 +117,12 @@ html {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 370px);
   gap: clamp(10px, 1.4vw, 18px);
-  align-items: center;
+  align-items: start;
 }
 
 .frog-map-stage {
   position: relative;
-  width: min(980px, 100%);
+  width: min(71vh, 875px, 100%);
   aspect-ratio: 1;
   margin: 0 auto;
   animation: frogMapIn 0.65s var(--knowledge-ease) both;
@@ -137,7 +137,7 @@ html {
 .frog-map-lines {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .frog-map-line {
@@ -228,9 +228,9 @@ html {
 .frog-map-tooltip {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 10px);
-  width: min(220px, 44vw);
-  padding: 10px 12px;
+  bottom: calc(100% + 12px);
+  width: 180px;
+  padding: 9px 11px;
   border: 1px solid rgba(102, 184, 111, 0.4);
   border-radius: 8px;
   color: var(--knowledge-gold);
@@ -248,9 +248,50 @@ html {
   transform: translate(-50%, 0);
 }
 
+.frog-map-tooltip-right {
+  left: calc(100% + 14px);
+  top: 50%;
+  bottom: auto;
+  transform: translate(6px, -50%);
+}
+
+.frog-map-node:hover .frog-map-tooltip-right,
+.frog-map-node:focus-visible .frog-map-tooltip-right {
+  transform: translate(0, -50%);
+}
+
+.frog-map-tooltip-left {
+  left: auto;
+  right: calc(100% + 14px);
+  top: 50%;
+  bottom: auto;
+  transform: translate(-6px, -50%);
+}
+
+.frog-map-node:hover .frog-map-tooltip-left,
+.frog-map-node:focus-visible .frog-map-tooltip-left {
+  transform: translate(0, -50%);
+}
+
+.frog-map-tooltip-bottom {
+  left: 50%;
+  top: calc(100% + 12px);
+  bottom: auto;
+  transform: translate(-50%, -6px);
+}
+
+.frog-map-node:hover .frog-map-tooltip-bottom,
+.frog-map-node:focus-visible .frog-map-tooltip-bottom {
+  transform: translate(-50%, 0);
+}
+
 .knowledge-panel {
   min-width: 0;
-  padding: clamp(20px, 3vw, 30px);
+  max-width: 100%;
+  min-height: 620px;
+  align-self: start;
+  overflow: hidden;
+  padding: clamp(18px, 2.4vw, 26px);
   border: 1px solid var(--knowledge-border);
   border-radius: var(--knowledge-radius);
   background:
@@ -276,10 +317,15 @@ html {
 }
 
 .knowledge-panel-title {
+  max-width: 100%;
   margin: 0 0 10px;
   color: var(--knowledge-gold);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+  font-size: clamp(1.8rem, 1.9vw, 2.8rem);
   line-height: 1.08;
 }
 
@@ -321,6 +367,30 @@ html {
   border: 1px solid rgba(240, 206, 117, 0.2);
   border-radius: 8px;
   background: rgba(240, 206, 117, 0.065);
+}
+
+.knowledge-panel-map-button {
+  display: none;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 0 16px;
+  border: 1px solid rgba(102, 184, 111, 0.46);
+  border-radius: 999px;
+  color: var(--knowledge-gold);
+  background: rgba(8, 11, 8, 0.92);
+  box-shadow: 0 0 18px rgba(102, 184, 111, 0.14);
+  font-weight: 800;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.knowledge-panel-map-button:hover,
+.knowledge-panel-map-button:focus-visible {
+  border-color: rgba(102, 184, 111, 0.82);
+  background: rgba(102, 184, 111, 0.12);
+  box-shadow: 0 0 22px rgba(102, 184, 111, 0.26);
+  transform: translateY(-1px);
 }
 
 @keyframes frogMapIn {
@@ -375,11 +445,12 @@ html {
   }
 
   .frog-map-stage {
-    width: min(780px, 100%);
+    width: min(73vh, 800px, 100%);
   }
 
   .knowledge-panel {
     width: min(760px, 100%);
+    min-height: auto;
     margin: 0 auto;
   }
 }
@@ -405,6 +476,10 @@ html {
     width: min(100%, 460px);
   }
 
+  .knowledge-panel {
+    scroll-margin-top: 16px;
+  }
+
   .frog-map-center {
     width: clamp(132px, 36vw, 172px);
   }
@@ -426,6 +501,16 @@ html {
 
   .knowledge-panel {
     padding: 18px;
+  }
+
+  .knowledge-panel-title {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    line-height: 1.08;
+  }
+
+  .knowledge-panel-map-button {
+    display: inline-flex;
+    width: 100%;
   }
 }
 

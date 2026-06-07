@@ -261,6 +261,8 @@ const panelStudent = document.getElementById("knowledgePanelStudent");
 const panelInsights = document.getElementById("knowledgePanelInsights");
 const panelAction = document.getElementById("knowledgePanelAction");
 const knowledgePanel = document.getElementById("knowledgePanel");
+const knowledgeMap = document.getElementById("knowledge-map");
+const backToMapButton = document.getElementById("knowledgeBackToMap");
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -275,6 +277,13 @@ function getPosition(index) {
     x: 50 + Math.cos(angle) * radius,
     y: 50 + Math.sin(angle) * radius
   };
+}
+
+function getTooltipClass(position) {
+  if (position.x <= 32) return "frog-map-tooltip-left";
+  if (position.x >= 68) return "frog-map-tooltip-right";
+  if (position.y >= 66) return "frog-map-tooltip-bottom";
+  return "frog-map-tooltip-top";
 }
 
 function setActiveChapter(chapter, shouldScroll = false) {
@@ -327,9 +336,10 @@ function renderMap(activeId = 1) {
     node.style.setProperty("--frog-x", `${positions[index].x}%`);
     node.style.setProperty("--frog-y", `${positions[index].y}%`);
     node.setAttribute("aria-label", `Відкрити розділ ${pad(chapter.id)}: ${chapter.title}`);
+    const tooltipClass = getTooltipClass(positions[index]);
     node.innerHTML = `
       <span class="frog-map-node-number">${pad(chapter.id)}</span>
-      <span class="frog-map-tooltip">${chapter.title}</span>
+      <span class="frog-map-tooltip ${tooltipClass}">${chapter.title}</span>
     `;
     node.addEventListener("click", () => setActiveChapter(chapter, true));
     frogMapNodes.appendChild(node);
@@ -345,6 +355,10 @@ window.addEventListener("resize", () => {
   const activeId = activeNode ? Number(activeNode.dataset.chapterId) : 1;
   window.clearTimeout(resizeTimer);
   resizeTimer = window.setTimeout(() => renderMap(activeId), 120);
+});
+
+backToMapButton.addEventListener("click", () => {
+  knowledgeMap.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
 renderMap();
