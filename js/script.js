@@ -29,6 +29,8 @@ const els = {
   bookButton: document.getElementById("bookButton"),
   bookModal: document.getElementById("bookModal"),
   chapterModal: document.getElementById("chapterModal"),
+  chapterDialog: document.querySelector(".chapter-dialog"),
+  chapterCloseButton: document.querySelector("[data-close-chapter]"),
   chapterAudio: document.getElementById("chapterAudio"),
   chapterPlayButton: document.getElementById("chapterPlayButton"),
   chapterPlayIcon: document.getElementById("chapterPlayIcon"),
@@ -179,7 +181,11 @@ function openChapter(chapter) {
   document.getElementById("chapterQuote").textContent = chapter.quote;
   resetChapterAudio(chapter);
   els.chapterModal.hidden = false;
-  els.chapterPlayButton.focus();
+  els.chapterDialog.scrollTop = 0;
+  els.chapterCloseButton.focus({ preventScroll: true });
+  requestAnimationFrame(() => {
+    els.chapterDialog.scrollTop = 0;
+  });
 }
 
 function closeChapter() {

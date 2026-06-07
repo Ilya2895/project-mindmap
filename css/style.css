@@ -678,6 +678,7 @@ input[type="range"] {
 
   .chapter-dialog {
     width: min(95vw, 560px);
+    padding-top: clamp(48px, 8vh, 64px);
   }
 
   .chapter-topline {
@@ -700,6 +701,13 @@ input[type="range"] {
     width: 36px;
     height: 36px;
     font-size: 1.35rem;
+  }
+
+  .chapter-dialog .close-button {
+    position: sticky;
+    top: 12px;
+    z-index: 6;
+    margin: calc(-1 * clamp(36px, 6vh, 48px)) 0 0 auto;
   }
 
   .book-cover-page img {
