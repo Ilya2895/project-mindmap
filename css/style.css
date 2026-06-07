@@ -59,7 +59,7 @@ input:focus-visible {
 .app {
   position: relative;
   min-height: 100vh;
-  padding: clamp(20px, 4vw, 48px) 16px 40px;
+  padding: clamp(12px, 2vh, 24px) 16px clamp(14px, 2vh, 24px);
   isolation: isolate;
   overflow: hidden;
 }
@@ -104,10 +104,10 @@ input:focus-visible {
 }
 
 .hero h1 {
-  margin: 8px 0 10px;
+  margin: 2px 0 4px;
   color: var(--gold-strong);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.35rem, 7.5vw, 6.6rem);
+  font-size: clamp(2.1rem, 6.4vw, 5.7rem);
   line-height: 0.94;
   letter-spacing: 0.035em;
   text-shadow: 0 10px 26px rgba(0, 0, 0, 0.38);
@@ -115,9 +115,9 @@ input:focus-visible {
 
 .map-stage {
   position: relative;
-  width: min(var(--stage-size, 1020px), 96vw);
+  width: min(var(--stage-size, 63vh), 670px, 90vw);
   aspect-ratio: 1;
-  margin: clamp(12px, 2.5vw, 24px) auto 0;
+  margin: clamp(2px, 0.6vh, 8px) auto 0;
   contain: layout;
 }
 
@@ -145,7 +145,7 @@ input:focus-visible {
   left: 50%;
   top: 50%;
   z-index: 2;
-  width: clamp(150px, var(--book-size, 24vw), 286px);
+  width: clamp(128px, var(--book-size, 20vh), 238px);
   min-width: 128px;
   padding: 0;
   border: 0;
@@ -153,6 +153,7 @@ input:focus-visible {
   transform: translate(-50%, -50%);
   animation: bookFloat 6s ease-in-out infinite;
   touch-action: manipulation;
+  transition: transform 0.36s var(--ease), filter 0.36s var(--ease);
 }
 
 .book-core img {
@@ -165,6 +166,12 @@ input:focus-visible {
 .book-core:hover img,
 .book-core:focus-visible img {
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.54), 0 0 0 1px rgba(240, 206, 117, 0.62);
+}
+
+.book-core:hover,
+.book-core:focus-visible {
+  transform: translate(-50%, calc(-50% - 5px)) scale(1.02);
+  filter: drop-shadow(0 0 18px rgba(240, 206, 117, 0.18));
 }
 
 .chapter-node {
@@ -262,17 +269,17 @@ input:focus-visible {
 
 .knowledge-cta {
   width: min(420px, 92vw);
-  margin: 12px auto 0;
+  margin: clamp(16px, 2.2vh, 24px) auto 0;
 }
 
 .book-strip {
   width: min(520px, 94vw);
-  margin: 10px auto 0;
+  margin: clamp(2px, 0.4vh, 5px) auto 0;
   text-align: center;
 }
 
 .book-strip p {
-  margin: 0 0 10px;
+  margin: 0 0 4px;
   color: var(--gold-strong);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(0.92rem, 2vw, 1.15rem);
@@ -283,7 +290,7 @@ input:focus-visible {
   display: grid;
   gap: 3px;
   justify-items: center;
-  padding: 10px 14px;
+  padding: 6px 14px;
   border: 1px solid rgba(214, 180, 90, 0.2);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
@@ -303,7 +310,7 @@ input:focus-visible {
 
 .map-link {
   display: flex;
-  min-height: 54px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(214, 180, 90, 0.34);
@@ -311,15 +318,16 @@ input:focus-visible {
   color: var(--text);
   background: rgba(255, 255, 255, 0.055);
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  transition: transform 0.32s var(--ease), background 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
 }
 
 .map-link:hover,
 .map-link:focus-visible {
   border-color: rgba(240, 206, 117, 0.58);
   background: rgba(214, 180, 90, 0.1);
+  box-shadow: 0 0 22px rgba(240, 206, 117, 0.16);
   transform: translateY(-2px);
 }
 
@@ -355,7 +363,7 @@ input:focus-visible {
 .book-dialog {
   position: relative;
   z-index: 1;
-  width: min(92vw, 720px);
+  width: min(92vw, 685px);
   max-height: min(88vh, 780px);
   max-height: min(88dvh, 780px);
   overflow-y: auto;
@@ -367,13 +375,14 @@ input:focus-visible {
 }
 
 .chapter-dialog {
-  padding: clamp(18px, 5vw, 40px);
+  padding: clamp(18px, 4.4vw, 34px);
 }
 
 .chapter-topline {
   display: flex;
   justify-content: space-between;
   gap: 14px;
+  padding-right: 78px;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -393,6 +402,7 @@ input:focus-visible {
 
 .participant-label {
   align-self: center;
+  max-width: 100%;
   color: var(--muted);
 }
 
@@ -404,7 +414,7 @@ input:focus-visible {
   overflow-wrap: break-word;
   word-break: normal;
   hyphens: auto;
-  font-size: clamp(1.5rem, 3.4vw, 2.45rem);
+  font-size: clamp(1.42rem, 3vw, 2.28rem);
   line-height: 1.12;
   letter-spacing: 0.01em;
 }
@@ -545,13 +555,14 @@ input[type="range"] {
 }
 
 .book-dialog {
+  width: min(88vw, 835px);
   display: grid;
   grid-template-columns: minmax(230px, 0.75fr) 1.25fr;
 }
 
 .book-page {
   min-height: 420px;
-  padding: clamp(28px, 5vw, 54px);
+  padding: clamp(24px, 4.2vw, 46px);
   color: #21170b;
   background: linear-gradient(145deg, #f4e3bd, #caa55f);
 }
@@ -559,13 +570,16 @@ input[type="range"] {
 .book-cover-page {
   display: grid;
   place-items: center;
-  background: linear-gradient(145deg, #121015, #211b19);
+  background:
+    radial-gradient(circle at 50% 46%, rgba(240, 206, 117, 0.14), transparent 46%),
+    linear-gradient(145deg, #121015, #211b19);
 }
 
 .book-cover-page img {
-  width: min(220px, 74%);
+  width: min(270px, 90%);
   border-radius: 8px;
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 38px rgba(214, 180, 90, 0.22);
+  transform: translateY(-24px);
 }
 
 .book-page + .book-page {
@@ -588,12 +602,14 @@ input[type="range"] {
   overflow-wrap: break-word;
   word-break: normal;
   hyphens: auto;
-  font-size: clamp(1.85rem, 4vw, 3.25rem);
+  font-size: clamp(1.78rem, 3.75vw, 3rem);
   line-height: 1.08;
 }
 
 .book-page p {
-  line-height: 1.68;
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.54;
 }
 
 @keyframes bookFloat {
@@ -620,17 +636,17 @@ input[type="range"] {
 
 @media (min-width: 1920px) {
   :root {
-    --stage-size: 1120px;
-    --book-size: 270px;
-    --node-size: 66px;
+    --stage-size: 63vh;
+    --book-size: 18.8vh;
+    --node-size: clamp(46px, 5.3vh, 56px);
   }
 }
 
 @media (max-width: 1024px) {
   :root {
-    --stage-size: 860px;
-    --book-size: 230px;
-    --node-size: 58px;
+    --stage-size: 61vh;
+    --book-size: 18vh;
+    --node-size: clamp(44px, 5vh, 54px);
   }
 }
 
