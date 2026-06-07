@@ -650,11 +650,69 @@ input[type="range"] {
   }
 }
 
+@media (max-width: 900px) and (orientation: portrait) {
+  .app {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) and (min-height: 800px) {
+  .app {
+    padding-top: clamp(20px, 3vh, 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --book-size: clamp(106px, 15.5vh, 150px);
+    --node-size: clamp(38px, 4.8vh, 48px);
+  }
+
+  .book-core {
+    min-width: 0;
+  }
+
+  .chapter-dialog {
+    width: min(95vw, 560px);
+  }
+
+  .chapter-topline {
+    padding-right: 48px;
+  }
+
+  .participant-label {
+    display: none;
+  }
+
+  .chapter-dialog h2 {
+    margin-right: 28px;
+    font-size: clamp(32px, 7vw, 48px);
+    line-height: 1.06;
+  }
+
+  .close-button {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.35rem;
+  }
+
+  .book-cover-page img {
+    max-height: 280px;
+    object-fit: contain;
+  }
+}
+
 @media (max-width: 600px) {
   :root {
     --stage-size: calc(100vw - 20px);
-    --book-size: clamp(85px, 25vw, 110px);
-    --node-size: clamp(36px, 10vw, 42px);
+    --book-size: clamp(74px, 21.5vw, 96px);
+    --node-size: clamp(30px, 8.2vw, 36px);
   }
 
   .app {
@@ -671,13 +729,13 @@ input[type="range"] {
   }
 
   .chapter-node .node-label {
-    display: block;
+    display: none;
     width: 70px;
-    font-size: 0.52rem;
+    font-size: 12px;
   }
 
   .chapter-node strong {
-    font-size: 0.92rem;
+    font-size: 12px;
   }
 
   .book-strip {
@@ -686,7 +744,7 @@ input[type="range"] {
 
   .chapter-dialog h2 {
     margin-right: 34px;
-    font-size: clamp(1.55rem, 8.6vw, 2.55rem);
+    font-size: clamp(32px, 7vw, 48px);
     line-height: 1.08;
   }
 
@@ -700,6 +758,18 @@ input[type="range"] {
 
   .book-page {
     min-height: auto;
+    padding: clamp(18px, 5vw, 28px);
+  }
+
+  .book-cover-page {
+    padding-block: 10px 4px;
+  }
+
+  .book-cover-page img {
+    width: min(232px, 78%);
+    max-height: 280px;
+    object-fit: contain;
+    transform: translateY(-10px);
   }
 
   .book-page + .book-page {

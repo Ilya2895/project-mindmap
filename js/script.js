@@ -89,22 +89,13 @@ function getNodePosition(index) {
   let radius = index % 2 === 0 ? 39 : 44;
 
   if (width <= 768) {
-    radius = index % 2 === 0 ? 35 : 42;
+    radius = index % 2 === 0 ? 39 : 46;
   }
 
   if (width <= 600) {
-    const mobileRings = [
-      { radius: 28, indexes: [0, 5, 10, 15] },
-      { radius: 40, indexes: [1, 4, 7, 11, 14, 17, 20] },
-      { radius: 48, indexes: [2, 3, 6, 8, 9, 12, 13, 16, 18, 19] }
-    ];
-    const ring = mobileRings.find((item) => item.indexes.includes(index));
-    const slot = ring.indexes.indexOf(index);
-    const ringAngle = (slot / ring.indexes.length) * Math.PI * 2 - Math.PI / 2 + (ring.radius === 40 ? 0.2 : 0);
-
     return {
-      x: 50 + Math.cos(ringAngle) * ring.radius,
-      y: 50 + Math.sin(ringAngle) * ring.radius
+      x: 50 + Math.cos(angle) * 43,
+      y: 50 + Math.sin(angle) * 43
     };
   }
 
