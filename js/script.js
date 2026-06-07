@@ -30,7 +30,7 @@ const els = {
   bookModal: document.getElementById("bookModal"),
   chapterModal: document.getElementById("chapterModal"),
   chapterDialog: document.querySelector(".chapter-dialog"),
-  chapterCloseButton: document.querySelector("[data-close-chapter]"),
+  chapterCloseButton: document.querySelector(".chapter-dialog [data-close-chapter]"),
   chapterAudio: document.getElementById("chapterAudio"),
   chapterPlayButton: document.getElementById("chapterPlayButton"),
   chapterPlayIcon: document.getElementById("chapterPlayIcon"),
