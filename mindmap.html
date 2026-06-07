@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Карта знань | Зроби це зараз</title>
+    <meta name="description" content="Повна інтерактивна mind map за книгою Браяна Трейсі «Зроби це зараз»." />
+    <link rel="stylesheet" href="css/mindmap.css" />
+  </head>
+  <body class="knowledge-page">
+    <main class="knowledge-shell" aria-label="Повна карта знань книги Зроби це зараз">
+      <header class="knowledge-header">
+        <a class="knowledge-back" href="./index.html">← Назад до книги</a>
+        <div class="knowledge-title-group">
+          <p class="knowledge-eyebrow">Brian Tracy</p>
+          <h1 class="knowledge-title">Карта знань</h1>
+          <p class="knowledge-subtitle">21 інсайт із книги «Зроби це зараз»</p>
+        </div>
+      </header>
+
+      <section class="frog-map-layout" aria-label="Інтерактивна карта розділів">
+        <div class="frog-map-stage" id="frogMapStage">
+          <svg class="frog-map-lines" id="frogMapLines" viewBox="0 0 1000 1000" aria-hidden="true"></svg>
+
+          <div class="frog-map-center" aria-label="Центральний символ карти">
+            <span class="frog-map-aura" aria-hidden="true"></span>
+            <img src="assets/frog.png" alt="Жаба — символ головної задачі" />
+          </div>
+
+          <div class="frog-map-nodes" id="frogMapNodes" aria-label="Розділи книги"></div>
+        </div>
+
+        <aside class="knowledge-panel" id="knowledgePanel" aria-live="polite">
+          <p class="knowledge-panel-kicker" id="knowledgePanelNumber">Розділ 01</p>
+          <h2 class="knowledge-panel-title" id="knowledgePanelTitle">Накрийте на стіл</h2>
+          <div class="knowledge-panel-block">
+            <h3>Інсайт</h3>
+            <p id="knowledgePanelInsight"></p>
+          </div>
+          <div class="knowledge-panel-block knowledge-panel-action">
+            <h3>Практична дія</h3>
+            <p id="knowledgePanelAction"></p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="js/mindmap.js"></script>
+  </body>
+</html>
