@@ -336,7 +336,7 @@ input:focus-visible {
   z-index: 10;
   display: grid;
   place-items: center;
-  padding: 18px;
+  padding: 0;
 }
 
 .chapter-modal[hidden],
@@ -355,6 +355,10 @@ input:focus-visible {
 .book-dialog {
   position: relative;
   z-index: 1;
+  width: min(92vw, 720px);
+  max-height: min(88vh, 780px);
+  max-height: min(88dvh, 780px);
+  overflow-y: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: rgba(20, 18, 24, 0.98);
@@ -363,10 +367,7 @@ input:focus-visible {
 }
 
 .chapter-dialog {
-  width: min(700px, 94vw);
-  max-height: min(760px, 90vh);
-  overflow-y: auto;
-  padding: clamp(24px, 4vw, 40px);
+  padding: clamp(18px, 5vw, 40px);
 }
 
 .chapter-topline {
@@ -463,8 +464,10 @@ input:focus-visible {
 }
 
 .chapter-player {
+  width: 100%;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 14px;
   align-items: center;
   margin-top: 26px;
@@ -538,10 +541,8 @@ input[type="range"] {
 }
 
 .book-dialog {
-  width: min(960px, 94vw);
   display: grid;
   grid-template-columns: minmax(230px, 0.75fr) 1.25fr;
-  overflow: hidden;
 }
 
 .book-page {
@@ -625,27 +626,15 @@ input[type="range"] {
   }
 }
 
-@media (max-width: 768px) {
-  :root {
-    --stage-size: 620px;
-    --book-size: 176px;
-    --node-size: 50px;
-  }
-
-  .app {
-    padding-inline: 12px;
-  }
-
-  .map-stage {
-    width: min(620px, 100%);
-  }
-}
-
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   :root {
     --stage-size: calc(100vw - 20px);
     --book-size: clamp(85px, 25vw, 110px);
     --node-size: clamp(36px, 10vw, 42px);
+  }
+
+  .app {
+    padding-inline: 12px;
   }
 
   .map-stage {
@@ -671,20 +660,17 @@ input[type="range"] {
     margin-top: 18px;
   }
 
+  .chapter-dialog h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.05;
+  }
+
   .chapter-topline {
     display: grid;
   }
 
-  .chapter-player {
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 12px;
-    padding: 12px;
-  }
-
   .book-dialog {
     grid-template-columns: 1fr;
-    max-height: 90vh;
-    overflow-y: auto;
   }
 
   .book-page {
@@ -697,10 +683,15 @@ input[type="range"] {
   }
 }
 
-@media (max-width: 390px) {
-  :root {
-    --book-size: clamp(78px, 24vw, 102px);
-    --node-size: clamp(34px, 9.8vw, 38px);
+@media (max-width: 420px) {
+  .chapter-player {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .chapter-play {
+    justify-self: start;
   }
 }
 

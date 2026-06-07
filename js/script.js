@@ -92,7 +92,7 @@ function getNodePosition(index) {
     radius = index % 2 === 0 ? 35 : 42;
   }
 
-  if (width <= 520) {
+  if (width <= 600) {
     const mobileRings = [
       { radius: 28, indexes: [0, 5, 10, 15] },
       { radius: 40, indexes: [1, 4, 7, 11, 14, 17, 20] },
