@@ -691,9 +691,12 @@ input[type="range"] {
     justify-content: space-between;
     width: 100%;
     gap: 16px;
-    position: sticky;
-    top: 0;
-    z-index: 6;
+    margin-bottom: 24px;
+  }
+
+  .chapter-modal-header .chapter-badge {
+    position: static;
+    flex-shrink: 0;
   }
 
   .participant-label {
