@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Зроби це зараз | Knowledge Map</title>
+    <title>Зроби це зараз | Карта знань</title>
     <meta
       name="description"
       content="Швидка сучасна інтерактивна карта знань за книгою Браяна Трейсі «Зроби це зараз»."
@@ -30,9 +30,17 @@
         <div class="nodes-layer" id="nodesLayer" aria-label="Розділи книги"></div>
       </section>
 
+      <section class="book-strip" aria-label="Підсумок карти знань">
+        <p>21 розділ • 21 ідея • 1 система</p>
+        <div class="progress-card" aria-live="polite">
+          <span>Прогрес вивчення</span>
+          <strong id="progressText">0 / 21 розділів переглянуто (0%)</strong>
+        </div>
+      </section>
+
       <nav class="knowledge-cta" aria-label="Повна карта знань">
         <!-- Replace link with your final mind map page -->
-        <a class="map-link" href="knowledge-map.html">Open Full Knowledge Map</a>
+        <a class="map-link" href="knowledge-map.html">Відкрити повну карту знань</a>
       </nav>
 
       <section class="chapter-modal" id="chapterModal" role="dialog" aria-modal="true" aria-labelledby="chapterTitle" hidden>
@@ -40,28 +48,29 @@
         <article class="chapter-dialog">
           <button class="close-button" type="button" aria-label="Закрити розділ" data-close-chapter>×</button>
           <div class="chapter-topline">
-            <span id="chapterNumber">РОЗДІЛ 01</span>
-            <span id="participantName">Ім'я учасника 1</span>
+            <span class="chapter-badge" id="chapterNumber">✦ Розділ 01</span>
+            <span class="participant-label" id="participantName">Ім'я учасника 1</span>
           </div>
           <h2 id="chapterTitle">Назва розділу</h2>
+          <div class="gold-divider" aria-hidden="true"></div>
 
           <section class="chapter-section" aria-labelledby="summaryHeading">
-            <h3 id="summaryHeading">КОРОТКИЙ ЗМІСТ</h3>
+            <h3 id="summaryHeading">Короткий зміст</h3>
             <p id="chapterSummary"></p>
           </section>
 
-          <section class="chapter-section" aria-labelledby="ideaHeading">
-            <h3 id="ideaHeading">ГОЛОВНА ІДЕЯ</h3>
+          <section class="chapter-section insight-section" aria-labelledby="ideaHeading">
+            <h3 id="ideaHeading">Головна ідея</h3>
             <p id="chapterIdea"></p>
           </section>
 
           <section class="chapter-section quote-section" aria-labelledby="quoteHeading">
-            <h3 id="quoteHeading">ЦИТАТА</h3>
+            <h3 id="quoteHeading">Ключова цитата</h3>
             <blockquote id="chapterQuote"></blockquote>
           </section>
 
-          <div class="chapter-player">
-            <button class="chapter-play" id="chapterPlayButton" type="button" aria-label="Увімкнути аудіо розділу">
+          <div class="chapter-player" aria-label="Аудіоплеєр розділу">
+            <button class="chapter-play" id="chapterPlayButton" type="button" aria-label="Увімкнути або поставити на паузу аудіо розділу">
               <span id="chapterPlayIcon">▶</span>
             </button>
             <div class="chapter-progress-wrap">
@@ -79,6 +88,9 @@
         <button class="modal-scrim" type="button" aria-label="Закрити інформацію про книгу" data-close-book></button>
         <article class="book-dialog">
           <button class="close-button" type="button" aria-label="Закрити інформацію про книгу" data-close-book>×</button>
+          <div class="book-page book-cover-page">
+            <img src="images/book-cover.png" alt="Обкладинка книги «Зроби це зараз»" />
+          </div>
           <div class="book-page">
             <p class="page-label">Книга</p>
             <h2 id="bookModalTitle">Зроби це зараз</h2>
@@ -87,15 +99,15 @@
               Практичний посібник про те, як визначати найважливіші задачі, починати без зволікань
               і будувати щоденну систему продуктивності.
             </p>
-          </div>
-          <div class="book-page">
-            <p class="page-label">Інсайти</p>
+            <p class="page-label">Що ви дізнаєтесь</p>
             <p>
               Центральна думка книги: спочатку виконуйте найважчу й найціннішу справу,
               бо саме вона найбільше впливає на результат.
             </p>
+            <p class="page-label">Подорож через 21 розділ</p>
             <p>
-              Контент розділів редагується в масиві <code>chapters</code> у файлі <code>js/script.js</code>.
+              Кожен розділ відкривається через інтерактивну карту. Натисніть на номер розділу,
+              щоб побачити короткий зміст, головну ідею та ключову цитату.
             </p>
           </div>
         </article>

@@ -1,26 +1,25 @@
 const chapters = [
-  // Future content goes here: edit participantName, title, summary, keyIdea, and quote.
-  { number: 1, participantName: "Ім'я учасника 1", title: "Найважливіша справа дня", summary: "Розділ пояснює, чому день варто починати із задачі, яка має найбільшу цінність, навіть якщо вона найскладніша.", keyIdea: "Головна справа, виконана першою, створює імпульс для всього дня.", quote: "Почніть із найважчого, і ви переможете зволікання." },
-  { number: 2, participantName: "Ім'я учасника 2", title: "Чіткість перед дією", summary: "Перед роботою потрібно точно визначити мету, очікуваний результат і перший конкретний крок.", keyIdea: "Ясна мета зменшує хаос і робить старт простішим.", quote: "Ясність перетворює бажання на план." },
-  { number: 3, participantName: "Ім'я учасника 3", title: "Планування кожного дня", summary: "Короткий список справ допомагає бачити пріоритети та не витрачати енергію на випадкову зайнятість.", keyIdea: "Кілька хвилин планування економлять години роботи.", quote: "Думайте на папері, перш ніж діяти." },
-  { number: 4, participantName: "Ім'я учасника 4", title: "Правило 80/20", summary: "Невелика частина задач приносить більшість результату, тому важливо знаходити саме ці задачі.", keyIdea: "Фокусуйтеся на діях із найбільшою віддачею.", quote: "Не всі справи рівні за своєю цінністю." },
-  { number: 5, participantName: "Ім'я учасника 5", title: "Наслідки вибору", summary: "Важливість задачі визначається її довгостроковими наслідками, а не тим, наскільки легко її виконати зараз.", keyIdea: "Обирайте справи, які змінюють майбутній результат.", quote: "Майбутнє формується вибором сьогодні." },
-  { number: 6, participantName: "Ім'я учасника 6", title: "Творче відкладання", summary: "Не все потрібно робити. Частину дрібних справ треба свідомо прибирати, щоб звільнити місце для головного.", keyIdea: "Менше зайвого означає більше енергії для важливого.", quote: "Щоб зробити більше цінного, робіть менше другорядного." },
-  { number: 7, participantName: "Ім'я учасника 7", title: "Метод ABCDE", summary: "Кожна справа отримує пріоритет від критичної до такої, яку можна не виконувати.", keyIdea: "Система пріоритетів захищає від випадкової роботи.", quote: "Працюйте над A-справами першими." },
-  { number: 8, participantName: "Ім'я учасника 8", title: "Ключові зони результату", summary: "Успіх залежить від кількох ключових сфер, які потрібно визначити й постійно покращувати.", keyIdea: "Слабка ключова зона стримує весь результат.", quote: "Зміцнюйте те, що найбільше впливає на ефективність." },
-  { number: 9, participantName: "Ім'я учасника 9", title: "Підготовка до роботи", summary: "Підготовлене робоче місце, матеріали й чіткий старт зменшують психологічний опір.", keyIdea: "Коли все готово, почати значно легше.", quote: "Підготовка робить дію природною." },
-  { number: 10, participantName: "Ім'я учасника 10", title: "Крок за кроком", summary: "Велику справу легше виконати, якщо розбити її на невеликі послідовні дії.", keyIdea: "Наступний крок важливіший за ідеальний план.", quote: "Великі результати складаються з малих завершених кроків." },
-  { number: 11, participantName: "Ім'я учасника 11", title: "Розвиток навичок", summary: "Навчання підвищує швидкість, якість і впевненість у виконанні важливих задач.", keyIdea: "Майстерність зменшує опір перед складною роботою.", quote: "Інвестуйте в навички, і робота стане легшою." },
-  { number: 12, participantName: "Ім'я учасника 12", title: "Сильні сторони", summary: "Найкращі результати з'являються там, де ваші здібності поєднуються з важливою метою.", keyIdea: "Працюйте там, де ваша сила має найбільшу ціну.", quote: "Сильні сторони пришвидшують шлях до результату." },
-  { number: 13, participantName: "Ім'я учасника 13", title: "Головне обмеження", summary: "У кожному процесі є вузьке місце, яке найбільше сповільнює прогрес.", keyIdea: "Знайдіть і усуньте головне обмеження.", quote: "Вузьке місце часто є точкою росту." },
-  { number: 14, participantName: "Ім'я учасника 14", title: "Особиста відповідальність", summary: "Продуктивність починається з рішення діяти самостійно й не перекладати відповідальність.", keyIdea: "Відповідальність повертає контроль.", quote: "Прогрес починається там, де закінчуються виправдання." },
-  { number: 15, participantName: "Ім'я учасника 15", title: "Енергія і ритм", summary: "Сон, відпочинок і правильний темп потрібні для стабільної роботи без вигорання.", keyIdea: "Ефективність залежить не лише від часу, а й від енергії.", quote: "Піклування про себе підтримує результат." },
-  { number: 16, participantName: "Ім'я учасника 16", title: "Внутрішній діалог", summary: "Те, як людина говорить із собою, впливає на сміливість починати й продовжувати.", keyIdea: "Підтримувальні слова допомагають діяти.", quote: "Переконайте себе, що можете, і старт стане ближчим." },
-  { number: 17, participantName: "Ім'я учасника 17", title: "Технології без відволікань", summary: "Гаджети мають допомагати роботі, а не керувати увагою через сповіщення.", keyIdea: "Контроль над технологіями повертає контроль над часом.", quote: "Інструмент має служити меті." },
-  { number: 18, participantName: "Ім'я учасника 18", title: "Один фокус", summary: "Однозадачність допомагає швидше завершувати справи й робити їх якісніше.", keyIdea: "Глибока концентрація сильніша за перемикання.", quote: "Завершена справа цінніша за десять початих." },
-  { number: 19, participantName: "Ім'я учасника 19", title: "Відчуття терміновості", summary: "Швидкий темп і готовність діяти створюють імпульс для проходження складних етапів.", keyIdea: "Дійте зараз, поки рішення має енергію.", quote: "Швидкість дії відрізняє мрію від результату." },
-  { number: 20, participantName: "Ім'я учасника 20", title: "Стан потоку", summary: "Потік з'являється, коли увага зібрана і робота вже почалася.", keyIdea: "Натхнення часто приходить після старту.", quote: "Почніть працювати, і ритм з'явиться в процесі." },
-  { number: 21, participantName: "Ім'я учасника 21", title: "Звичка завершувати", summary: "Регулярне завершення важливих задач формує дисципліну, впевненість і реальний прогрес.", keyIdea: "Завершення головних справ поступово стає характером.", quote: "Кожна завершена справа робить вас сильнішими." }
+  { number: 1, participantName: "Зроби це зараз", title: "Найважливіша справа дня", shortTitle: "Цілі", summary: "Розділ пояснює, чому день варто починати з чіткого визначення цілей і найважливішої задачі.", keyIdea: "Чіткість цілей є основою продуктивності. Записуйте їх і працюйте над найважливішою справою першою.", quote: "Є одна якість, якою повинен володіти переможець, — це визначення мети." },
+  { number: 2, participantName: "Зроби це зараз", title: "Заздалегідь плануйте кожен день", shortTitle: "План", summary: "Планування допомагає працювати спокійніше, швидше й без випадкової зайнятості.", keyIdea: "Складайте план напередодні ввечері, щоб зранку одразу перейти до дії.", quote: "Планувати — означає робити майбутнє теперішнім із можливістю діяти вже зараз." },
+  { number: 3, participantName: "Зроби це зараз", title: "Застосовуйте правило 80/20", shortTitle: "80/20", summary: "Невелика частина завдань приносить більшість результатів, тому важливо знаходити саме ці завдання.", keyIdea: "Фокусуйтеся на 20% справ, які мають найбільшу цінність.", quote: "Не всі справи рівні за своєю важливістю." },
+  { number: 4, participantName: "Зроби це зараз", title: "Думайте про наслідки", shortTitle: "Наслідки", summary: "Найважливіші завдання мають найбільші довгострокові наслідки.", keyIdea: "Оцінюйте справи за тим, як вони вплинуть на майбутній результат.", quote: "Майбутнє формується вибором, який ви робите сьогодні." },
+  { number: 5, participantName: "Зроби це зараз", title: "Творча прокрастинація", shortTitle: "Прокрастинація", summary: "Деякі дрібні справи варто свідомо відкласти, щоб звільнити час для справді важливого.", keyIdea: "Кажіть «ні» завданням із низькою цінністю.", quote: "Щоб зробити більше важливого, потрібно робити менше другорядного." },
+  { number: 6, participantName: "Зроби це зараз", title: "Метод АБВГД", shortTitle: "АБВГД", summary: "Сортуйте завдання за пріоритетом: від критично важливих до тих, які можна не виконувати.", keyIdea: "Починайте з найважливішого завдання категорії А.", quote: "Перший закон успіху — концентрація." },
+  { number: 7, participantName: "Зроби це зараз", title: "Ключові результати", shortTitle: "Результати", summary: "Визначте сфери, від яких найбільше залежить ваш успіх у роботі або навчанні.", keyIdea: "Працюйте над зонами, за які вас оцінюють найбільше.", quote: "Зміцнюйте те, що найбільше впливає на ефективність." },
+  { number: 8, participantName: "Зроби це зараз", title: "Закон трьох", shortTitle: "Три справи", summary: "У кожній сфері є кілька головних завдань, які приносять більшість результатів.", keyIdea: "Визначте три найцінніші справи та зробіть їх центром дня.", quote: "Робіть те, що можете, з тим, що маєте, там, де ви є." },
+  { number: 9, participantName: "Зроби це зараз", title: "Ретельна підготовка", shortTitle: "Підготовка", summary: "Підготуйте матеріали, простір і перший крок перед початком роботи.", keyIdea: "Підготовлене середовище зменшує опір і прискорює старт.", quote: "Коли все готово, почати значно легше." },
+  { number: 10, participantName: "Зроби це зараз", title: "Рухайтесь крок за кроком", shortTitle: "Кроки", summary: "Великі завдання стають керованими, якщо розділити їх на маленькі послідовні дії.", keyIdea: "Не думайте про всю дорогу — зробіть наступний крок.", quote: "Великі результати складаються з малих завершених кроків." },
+  { number: 11, participantName: "Зроби це зараз", title: "Удосконалюйте ключові навички", shortTitle: "Навички", summary: "Постійний розвиток навичок підвищує швидкість і якість роботи.", keyIdea: "Станьте кращими в тому, що найбільше впливає на результат.", quote: "Майстерність зменшує страх перед складністю." },
+  { number: 12, participantName: "Зроби це зараз", title: "Використовуйте свої таланти", shortTitle: "Таланти", summary: "Найкращі результати виникають там, де сильні сторони поєднуються з важливою метою.", keyIdea: "Працюйте там, де ваші здібності мають найбільшу цінність.", quote: "Робіть свою роботу від душі." },
+  { number: 13, participantName: "Зроби це зараз", title: "Визначте головні перепони", shortTitle: "Перепони", summary: "У кожному процесі є обмеження, яке найбільше гальмує прогрес.", keyIdea: "Знайдіть головну перешкоду і працюйте саме над нею.", quote: "Вузьке місце часто є точкою росту." },
+  { number: 14, participantName: "Зроби це зараз", title: "Тисніть на себе", shortTitle: "Дедлайн", summary: "Створюйте власні дедлайни й працюйте так, ніби час справді обмежений.", keyIdea: "Самодисципліна прискорює виконання важливих задач.", quote: "Ваш прогрес починається там, де закінчуються виправдання." },
+  { number: 15, participantName: "Зроби це зараз", title: "Максимізуйте особисті сили", shortTitle: "Енергія", summary: "Працюйте у періоди найвищої енергії та дбайте про відпочинок.", keyIdea: "Ефективність залежить не лише від часу, а й від енергії.", quote: "Піклування про себе підтримує результат." },
+  { number: 16, participantName: "Зроби це зараз", title: "Мотивуйте себе діяти", shortTitle: "Мотивація", summary: "Позитивний внутрішній діалог допомагає починати й продовжувати.", keyIdea: "Підтримуйте себе словами, які ведуть до дії.", quote: "Переконайте себе, що можете, і старт стане ближчим." },
+  { number: 17, participantName: "Зроби це зараз", title: "Позбудьтеся технологічного рабства", shortTitle: "Технології", summary: "Не дозволяйте телефону, пошті й соцмережам керувати вашим часом.", keyIdea: "Технології мають служити меті, а не забирати увагу.", quote: "Інструмент має допомагати роботі, а не керувати нею." },
+  { number: 18, participantName: "Зроби це зараз", title: "Діліть завдання на частини", shortTitle: "Частини", summary: "Великі задачі легше почати, якщо розділити їх на маленькі частини.", keyIdea: "Почніть із найменшого кроку, щоб запустити рух.", quote: "Початок звички схожий на тонку нитку, яка міцніє з повторенням." },
+  { number: 19, participantName: "Зроби це зараз", title: "Створюйте великі блоки часу", shortTitle: "Блоки часу", summary: "Виділяйте суцільні проміжки для глибокої роботи без відволікань.", keyIdea: "Великі блоки часу дають змогу зануритися у важливе завдання.", quote: "Концентрація всієї енергії на обмеженому колі завдань додає сили." },
+  { number: 20, participantName: "Зроби це зараз", title: "Відчуття терміновості", shortTitle: "Терміновість", summary: "Швидкий темп і готовність діяти створюють імпульс для проходження складних етапів.", keyIdea: "Дійте зараз, поки рішення має енергію.", quote: "Не зволікайте. Слушний час може ніколи не настати." },
+  { number: 21, participantName: "Зроби це зараз", title: "Виконуйте завдання по одному", shortTitle: "По одному", summary: "Почніть найважливіше завдання й доведіть його до завершення без перемикання.", keyIdea: "Однозадачність є одним із найсильніших способів підвищити продуктивність.", quote: "Завершена справа цінніша за десять початих." }
 ];
 
 const els = {
@@ -35,7 +34,8 @@ const els = {
   chapterPlayIcon: document.getElementById("chapterPlayIcon"),
   chapterProgress: document.getElementById("chapterProgress"),
   chapterCurrent: document.getElementById("chapterCurrent"),
-  chapterDuration: document.getElementById("chapterDuration")
+  chapterDuration: document.getElementById("chapterDuration"),
+  progressText: document.getElementById("progressText")
 };
 
 const ctx = els.canvas.getContext("2d");
@@ -45,6 +45,7 @@ let activeChapter = chapters[0];
 let particles = [];
 let particleFrame = 0;
 let lastFocusedElement = null;
+const viewedChapters = new Set(JSON.parse(localStorage.getItem("frogViewedChapters") || "[]"));
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return "0:00";
@@ -73,18 +74,38 @@ function createSvgGradient() {
   els.svg.appendChild(defs);
 }
 
-// Adaptive layout: desktop uses one broad ring; smaller screens use two rings to avoid node collisions.
+function saveProgress() {
+  localStorage.setItem("frogViewedChapters", JSON.stringify([...viewedChapters]));
+  const percent = Math.round((viewedChapters.size / chapters.length) * 100);
+  els.progressText.textContent = `${viewedChapters.size} / ${chapters.length} розділів переглянуто (${percent}%)`;
+  document.querySelectorAll(".chapter-node").forEach((node, index) => {
+    node.classList.toggle("viewed", viewedChapters.has(chapters[index].number));
+  });
+}
+
 function getNodePosition(index) {
   const width = window.innerWidth;
   const angle = (index / chapters.length) * Math.PI * 2 - Math.PI / 2;
   let radius = index % 2 === 0 ? 39 : 44;
 
   if (width <= 768) {
-    radius = index % 3 === 0 ? 32 : index % 3 === 1 ? 41 : 48;
+    radius = index % 2 === 0 ? 35 : 42;
   }
 
-  if (width <= 430) {
-    radius = index % 3 === 0 ? 30 : index % 3 === 1 ? 40 : 49;
+  if (width <= 520) {
+    const mobileRings = [
+      { radius: 28, indexes: [0, 5, 10, 15] },
+      { radius: 40, indexes: [1, 4, 7, 11, 14, 17, 20] },
+      { radius: 48, indexes: [2, 3, 6, 8, 9, 12, 13, 16, 18, 19] }
+    ];
+    const ring = mobileRings.find((item) => item.indexes.includes(index));
+    const slot = ring.indexes.indexOf(index);
+    const ringAngle = (slot / ring.indexes.length) * Math.PI * 2 - Math.PI / 2 + (ring.radius === 40 ? 0.2 : 0);
+
+    return {
+      x: 50 + Math.cos(ringAngle) * ring.radius,
+      y: 50 + Math.sin(ringAngle) * ring.radius
+    };
   }
 
   return {
@@ -100,14 +121,17 @@ function drawMindMap() {
 
   chapters.forEach((chapter, index) => {
     const position = getNodePosition(index);
-
     const node = document.createElement("button");
     node.type = "button";
-    node.className = "chapter-node";
+    node.className = `chapter-node${viewedChapters.has(chapter.number) ? " viewed" : ""}`;
     node.style.left = `${position.x}%`;
     node.style.top = `${position.y}%`;
     node.setAttribute("aria-label", `Відкрити розділ ${pad(chapter.number)}: ${chapter.title}`);
-    node.innerHTML = `<strong>${pad(chapter.number)}</strong>`;
+    node.innerHTML = `
+      <strong>${pad(chapter.number)}</strong>
+      <span class="node-label">${chapter.shortTitle}</span>
+      <span class="node-tooltip" role="tooltip"><span>${pad(chapter.number)}</span><em>${chapter.title}</em></span>
+    `;
     node.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -142,22 +166,27 @@ function drawMindMap() {
   });
 }
 
-function openChapter(chapter) {
-  activeChapter = chapter;
-  lastFocusedElement = document.activeElement;
-  document.getElementById("chapterNumber").textContent = `РОЗДІЛ ${pad(chapter.number)}`;
-  document.getElementById("participantName").textContent = chapter.participantName;
-  document.getElementById("chapterTitle").textContent = chapter.title;
-  document.getElementById("chapterSummary").textContent = chapter.summary;
-  document.getElementById("chapterIdea").textContent = chapter.keyIdea;
-  document.getElementById("chapterQuote").textContent = chapter.quote;
-
+function resetChapterAudio(chapter) {
   els.chapterAudio.pause();
   els.chapterAudio.src = chapterAudioPath(chapter.number);
   els.chapterProgress.value = "0";
   els.chapterCurrent.textContent = "0:00";
   els.chapterDuration.textContent = "0:00";
   els.chapterPlayIcon.textContent = "▶";
+}
+
+function openChapter(chapter) {
+  activeChapter = chapter;
+  viewedChapters.add(chapter.number);
+  saveProgress();
+  lastFocusedElement = document.activeElement;
+  document.getElementById("chapterNumber").textContent = `✦ Розділ ${pad(chapter.number)}`;
+  document.getElementById("participantName").textContent = chapter.participantName;
+  document.getElementById("chapterTitle").textContent = chapter.title;
+  document.getElementById("chapterSummary").textContent = chapter.summary;
+  document.getElementById("chapterIdea").textContent = chapter.keyIdea;
+  document.getElementById("chapterQuote").textContent = chapter.quote;
+  resetChapterAudio(chapter);
   els.chapterModal.hidden = false;
   els.chapterPlayButton.focus();
 }
@@ -201,6 +230,11 @@ function bindAudio() {
     els.chapterPlayIcon.textContent = "▶";
   });
 
+  els.chapterAudio.addEventListener("ended", () => {
+    els.chapterPlayIcon.textContent = "▶";
+    els.chapterProgress.value = "100";
+  });
+
   els.chapterProgress.addEventListener("input", () => {
     if (els.chapterAudio.duration) {
       els.chapterAudio.currentTime = (Number(els.chapterProgress.value) / 100) * els.chapterAudio.duration;
@@ -215,10 +249,7 @@ function bindAudio() {
         els.chapterAudio.pause();
       }
     } catch {
-      // Some browsers block playback until a direct user gesture or until audio files are present.
-      if (activeChapter.number === 3) {
-        els.chapterAudio.src = "audio/chapter-03 .mp3";
-      }
+      // Audio playback can be blocked by the browser if files are missing or user gesture rules apply.
     }
   });
 }
@@ -250,7 +281,6 @@ function resizeParticles() {
   els.canvas.style.height = `${window.innerHeight}px`;
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-  // Performance improvement: particles are intentionally capped at 32, with no shadowBlur or glow.
   const count = prefersReducedMotion ? 0 : Math.min(32, Math.max(20, Math.floor(window.innerWidth / 70)));
   particles = Array.from({ length: count }, () => ({
     x: Math.random() * window.innerWidth,
@@ -279,7 +309,6 @@ function animateParticles() {
   particleFrame = requestAnimationFrame(animateParticles);
 }
 
-// Redraw only on breakpoint-affecting resize, avoiding continuous layout work.
 let resizeTimer = 0;
 function handleResize() {
   window.clearTimeout(resizeTimer);
@@ -296,4 +325,5 @@ drawMindMap();
 bindAudio();
 setupModals();
 resizeParticles();
+saveProgress();
 if (!prefersReducedMotion) animateParticles();

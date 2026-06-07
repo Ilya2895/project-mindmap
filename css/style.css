@@ -118,7 +118,7 @@ input:focus-visible {
   width: min(var(--stage-size, 1020px), 96vw);
   aspect-ratio: 1;
   margin: clamp(12px, 2.5vw, 24px) auto 0;
-  contain: layout paint;
+  contain: layout;
 }
 
 .connection-svg,
@@ -159,7 +159,7 @@ input:focus-visible {
   display: block;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.48), 0 0 0 1px rgba(214, 180, 90, 0.32);
+  box-shadow: 0 0 25px rgba(214, 180, 90, 0.15), 0 18px 44px rgba(0, 0, 0, 0.48), 0 0 0 1px rgba(214, 180, 90, 0.32);
 }
 
 .book-core:hover img,
@@ -183,6 +183,61 @@ input:focus-visible {
   touch-action: manipulation;
 }
 
+.chapter-node .node-label,
+.chapter-node .node-tooltip {
+  position: absolute;
+  pointer-events: none;
+}
+
+.chapter-node .node-label {
+  display: none;
+  left: 50%;
+  top: calc(100% + 4px);
+  width: 76px;
+  color: rgba(247, 240, 223, 0.78);
+  font-size: 0.62rem;
+  line-height: 1.15;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.chapter-node .node-tooltip {
+  left: 50%;
+  bottom: calc(100% + 10px);
+  min-width: 170px;
+  padding: 10px 12px;
+  border: 1px solid rgba(214, 180, 90, 0.24);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(20, 18, 22, 0.98);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.36);
+  opacity: 0;
+  transform: translate(-50%, 6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.chapter-node .node-tooltip span {
+  display: block;
+  color: var(--gold-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.chapter-node .node-tooltip em {
+  display: block;
+  font-style: normal;
+  font-size: 0.84rem;
+  line-height: 1.3;
+}
+
+.chapter-node:hover .node-tooltip,
+.chapter-node:focus-visible .node-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 .chapter-node.is-visible {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
@@ -193,6 +248,9 @@ input:focus-visible {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(0.95rem, 1.6vw, 1.2rem);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chapter-node:hover,
@@ -205,6 +263,42 @@ input:focus-visible {
 .knowledge-cta {
   width: min(420px, 92vw);
   margin: 12px auto 0;
+}
+
+.book-strip {
+  width: min(520px, 94vw);
+  margin: 10px auto 0;
+  text-align: center;
+}
+
+.book-strip p {
+  margin: 0 0 10px;
+  color: var(--gold-strong);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.92rem, 2vw, 1.15rem);
+  letter-spacing: 0.08em;
+}
+
+.progress-card {
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+  padding: 10px 14px;
+  border: 1px solid rgba(214, 180, 90, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.progress-card span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.progress-card strong {
+  color: var(--text);
+  font-size: 0.9rem;
 }
 
 .map-link {
@@ -227,6 +321,12 @@ input:focus-visible {
   border-color: rgba(240, 206, 117, 0.58);
   background: rgba(214, 180, 90, 0.1);
   transform: translateY(-2px);
+}
+
+
+.chapter-node.viewed {
+  border-color: rgba(240, 206, 117, 0.82);
+  background: rgba(214, 180, 90, 0.16);
 }
 
 .chapter-modal,
@@ -273,19 +373,42 @@ input:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 14px;
-  color: var(--gold-strong);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
+.chapter-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(214, 180, 90, 0.34);
+  border-radius: 999px;
+  color: #16120a;
+  background: linear-gradient(135deg, #d6b45a, #f0ce75);
+}
+
+.participant-label {
+  align-self: center;
+  color: var(--muted);
+}
+
 .chapter-dialog h2 {
-  margin: 14px 42px 24px 0;
-  color: #fffaf0;
+  margin: 18px 42px 12px 0;
+  color: var(--gold-strong);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.9rem, 4.6vw, 3.4rem);
-  line-height: 1.06;
+  font-size: clamp(1.65rem, 3.8vw, 2.7rem);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+}
+
+.gold-divider {
+  width: min(220px, 58%);
+  height: 1px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, var(--gold-strong), transparent);
 }
 
 .chapter-section {
@@ -306,9 +429,36 @@ input:focus-visible {
   line-height: 1.65;
 }
 
+.insight-section {
+  padding: 16px;
+  border: 1px solid rgba(214, 180, 90, 0.22);
+  border-radius: 8px;
+  background: rgba(214, 180, 90, 0.08);
+}
+
+.insight-section h3::before {
+  content: "!";
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  place-items: center;
+  border-radius: 50%;
+  color: #151218;
+  background: var(--gold-strong);
+  font-size: 0.72rem;
+}
+
+.quote-section {
+  padding: 16px;
+  border: 1px solid rgba(214, 180, 90, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
 .quote-section blockquote {
-  padding-left: 16px;
-  border-left: 2px solid rgba(214, 180, 90, 0.62);
+  padding-left: 0;
+  border-left: 0;
   font-style: italic;
 }
 
@@ -322,6 +472,10 @@ input:focus-visible {
   border: 1px solid rgba(214, 180, 90, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.035);
+}
+
+.chapter-progress-wrap {
+  min-width: 0;
 }
 
 .chapter-play {
@@ -359,6 +513,9 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.06);
   font-size: 1.5rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-button:hover,
@@ -366,10 +523,24 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.chapter-dialog .close-button:hover,
+.chapter-dialog .close-button:focus-visible {
+  color: var(--gold-strong);
+  border-color: rgba(240, 206, 117, 0.74);
+  background: rgba(214, 180, 90, 0.12);
+}
+
+.book-dialog .close-button:hover,
+.book-dialog .close-button:focus-visible {
+  color: var(--text);
+  border-color: rgba(247, 240, 223, 0.36);
+  background: #211b19;
+}
+
 .book-dialog {
-  width: min(880px, 94vw);
+  width: min(960px, 94vw);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(230px, 0.75fr) 1.25fr;
   overflow: hidden;
 }
 
@@ -378,6 +549,18 @@ input[type="range"] {
   padding: clamp(28px, 5vw, 54px);
   color: #21170b;
   background: linear-gradient(145deg, #f4e3bd, #caa55f);
+}
+
+.book-cover-page {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #121015, #211b19);
+}
+
+.book-cover-page img {
+  width: min(220px, 74%);
+  border-radius: 8px;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
 }
 
 .book-page + .book-page {
@@ -444,9 +627,9 @@ input[type="range"] {
 
 @media (max-width: 768px) {
   :root {
-    --stage-size: 700px;
-    --book-size: 200px;
-    --node-size: 54px;
+    --stage-size: 620px;
+    --book-size: 176px;
+    --node-size: 50px;
   }
 
   .app {
@@ -454,21 +637,38 @@ input[type="range"] {
   }
 
   .map-stage {
-    width: min(700px, 112vw);
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: min(620px, 100%);
   }
 }
 
 @media (max-width: 520px) {
   :root {
-    --stage-size: 560px;
-    --book-size: 170px;
-    --node-size: 50px;
+    --stage-size: calc(100vw - 20px);
+    --book-size: clamp(85px, 25vw, 110px);
+    --node-size: clamp(36px, 10vw, 42px);
   }
 
   .map-stage {
-    width: min(560px, 122vw);
+    width: var(--stage-size);
+    margin-top: 18px;
+  }
+
+  .chapter-node .node-tooltip {
+    display: none;
+  }
+
+  .chapter-node .node-label {
+    display: block;
+    width: 70px;
+    font-size: 0.52rem;
+  }
+
+  .chapter-node strong {
+    font-size: 0.92rem;
+  }
+
+  .book-strip {
+    margin-top: 18px;
   }
 
   .chapter-topline {
@@ -476,11 +676,9 @@ input[type="range"] {
   }
 
   .chapter-player {
-    grid-template-columns: 1fr;
-  }
-
-  .chapter-play {
-    justify-self: start;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
   }
 
   .book-dialog {
@@ -501,13 +699,8 @@ input[type="range"] {
 
 @media (max-width: 390px) {
   :root {
-    --stage-size: 510px;
-    --book-size: 150px;
-    --node-size: 47px;
-  }
-
-  .map-stage {
-    width: min(510px, 128vw);
+    --book-size: clamp(78px, 24vw, 102px);
+    --node-size: clamp(34px, 9.8vw, 38px);
   }
 }
 
